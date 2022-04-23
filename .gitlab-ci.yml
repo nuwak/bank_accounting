@@ -1,0 +1,46 @@
+image: gitlab/dind
+services:
+  - docker:dind
+
+stages:
+  - build
+  - docker
+
+variables:
+  DOCKER_DRIVER: overlay
+
+build:
+  image: gradle:alpine
+  before_script:
+    - GRADLE_USER_HOME="$(pwd)/.gradle"
+    - export GRADLE_USER_HOME
+  variables:
+    GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+  stage: build
+  script: gradle --build-cache assemble
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    policy: push
+    paths:
+      - build
+      - .gradle
+  artifacts:
+    paths:
+      - build/libs/finmid.jar
+
+#test:
+#  stage: test
+#  script: gradle check
+#  cache:
+#    key: "$CI_COMMIT_REF_NAME"
+#    policy: pull
+#    paths:
+#      - build
+#      - .gradle
+
+docker-build:
+  stage: docker
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker build -t registry.gitlab.com/nuwak/finmid .
+    - docker push registry.gitlab.com/nuwak/finmid

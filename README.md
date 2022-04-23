@@ -1,0 +1,1 @@
+ - The latest version of java is 18, but version 17 is used since it is LTS, and it is now recommended for Spring
