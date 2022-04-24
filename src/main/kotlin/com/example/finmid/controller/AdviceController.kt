@@ -18,7 +18,7 @@ class AdviceController : ResponseEntityExceptionHandler() {
             hashMapOf(
                 "timestamp" to Instant.now(),
                 "message" to ex.message,
-                "status" to 400,
+                "status" to HttpStatus.BAD_REQUEST.value(),
                 "error" to HttpStatus.BAD_REQUEST.reasonPhrase,
             ),
             HttpStatus.BAD_REQUEST
