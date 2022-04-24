@@ -1,0 +1,15 @@
+### create account
+POST {{host}}/v1/account
+Content-Type: application/json
+
+{
+  "balance": "42.42"
+}
+
+### reauest for not existed account
+GET {{host}}/v1/account/111110
+Content-Type: application/json
+
+### reauest for exist account
+GET {{host}}/v1/account/1
+Content-Type: application/json

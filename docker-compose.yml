@@ -10,13 +10,13 @@ services:
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: db
   app:
-    image: 'device-serv.jar'
+    image: 'finmid_app'
     build:
       context: .
-    container_name: app
+    container_name: finmid_app
     depends_on:
       - pgdb
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://pgdb:5432/devicedb
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://pgdb:5432/db

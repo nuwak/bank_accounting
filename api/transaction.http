@@ -1,0 +1,10 @@
+
+###
+PUT {{host}}/v1/transaction
+Content-Type: application/json
+
+{
+   "amount": "11.21",
+   "from": 1,
+   "to": 2
+}
