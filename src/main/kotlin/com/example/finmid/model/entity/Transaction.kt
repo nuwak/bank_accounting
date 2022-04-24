@@ -27,9 +27,9 @@ class Transaction(
     lateinit var updated: Instant
 }
 
-fun Transaction.toDto() = with(this) {
+fun Transaction.toDto() =
     TransactionDto(amount = amount.toString(), from = from, to = to)
-}
+
 
 fun Transaction.Companion.fromDto(dto: TransactionDto) = with(dto) {
     Transaction(amount = amount.toBigDecimal(), from = from, to = to)

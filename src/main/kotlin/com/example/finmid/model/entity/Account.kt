@@ -15,7 +15,7 @@ import javax.persistence.Id
 class Account(
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    var accountId: Long?  = null,
+    var accountId: Long? = null,
     var balance: BigDecimal,
 ) {
     companion object
@@ -27,9 +27,8 @@ class Account(
     lateinit var updated: Instant
 }
 
-fun Account.toDto() = with(this) {
+fun Account.toDto() =
     AccountDto(accountId = accountId, balance = balance)
-}
 
 fun Account.Companion.fromDto(dto: AccountDto) = with(dto) {
     Account(balance = balance)
