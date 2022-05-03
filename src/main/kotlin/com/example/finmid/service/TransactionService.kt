@@ -19,7 +19,7 @@ class TransactionService(
 ) {
     val log = KotlinLogging.logger {}
 
-    @Transactional(isolation = Isolation.REPEATABLE_READ)
+    @Transactional(isolation = Isolation.SERIALIZABLE)
     fun create(dto: TransactionDto): Transaction {
         val transaction = Transaction.fromDto(dto)
 
