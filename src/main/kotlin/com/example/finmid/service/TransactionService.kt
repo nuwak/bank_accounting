@@ -1,9 +1,9 @@
 package com.example.finmid.service
 
+import com.example.finmid.exception.TransactionException
 import com.example.finmid.model.dto.transaction.TransactionDto
 import com.example.finmid.model.entity.Transaction
 import com.example.finmid.model.entity.fromDto
-import com.example.finmid.exception.TransactionException
 import com.example.finmid.model.repository.AccountRepository
 import com.example.finmid.model.repository.TransactionRepository
 import mu.KotlinLogging
@@ -19,8 +19,7 @@ class TransactionService(
 ) {
     val log = KotlinLogging.logger {}
 
-    @Transactional(isolation = Isolation.SERIALIZABLE)
-    @Synchronized
+    @Transactional(isolation = Isolation.REPEATABLE_READ)
     fun create(dto: TransactionDto): Transaction {
         val transaction = Transaction.fromDto(dto)
 
