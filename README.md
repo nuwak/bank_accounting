@@ -7,4 +7,6 @@
 
 Run app `make run`
 
+## todo
+ - [ ] write tests
 
