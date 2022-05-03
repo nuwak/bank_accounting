@@ -1,6 +1,6 @@
-package com.example.finmid.controller
+package com.example.banka.controller
 
-import com.example.finmid.exception.TransactionException
+import com.example.banka.exception.TransactionException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice

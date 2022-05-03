@@ -1,6 +1,6 @@
-package com.example.finmid.model.entity
+package com.example.banka.model.entity
 
-import com.example.finmid.model.dto.account.AccountDto
+import com.example.banka.model.dto.account.AccountDto
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
 import java.math.BigDecimal

@@ -1,4 +1,4 @@
-package com.example.finmid.model.dto.transaction
+package com.example.banka.model.dto.transaction
 
 data class TransactionDto(
     val amount: String,

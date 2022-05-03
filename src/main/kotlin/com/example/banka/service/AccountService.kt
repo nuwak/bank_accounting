@@ -1,10 +1,10 @@
-package com.example.finmid.service
+package com.example.banka.service
 
-import com.example.finmid.model.dto.account.AccountDto
-import com.example.finmid.model.entity.Account
-import com.example.finmid.model.entity.fromDto
-import com.example.finmid.model.entity.toDto
-import com.example.finmid.model.repository.AccountRepository
+import com.example.banka.model.dto.account.AccountDto
+import com.example.banka.model.entity.Account
+import com.example.banka.model.entity.fromDto
+import com.example.banka.model.entity.toDto
+import com.example.banka.model.repository.AccountRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 

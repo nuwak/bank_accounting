@@ -1,4 +1,4 @@
-package com.example.finmid.exception
+package com.example.banka.exception
 
 class TransactionException(override val message: String?): RuntimeException() {
 }

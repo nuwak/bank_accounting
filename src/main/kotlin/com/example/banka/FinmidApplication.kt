@@ -1,11 +1,11 @@
-package com.example.finmid
+package com.example.banka
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class FinmidApplication
+class bankaApplication
 
 fun main(args: Array<String>) {
-    runApplication<FinmidApplication>(*args)
+    runApplication<bankaApplication>(*args)
 }

@@ -1,4 +1,4 @@
-package com.example.finmid.model.dto.account
+package com.example.banka.model.dto.account
 
 import java.math.BigDecimal
 

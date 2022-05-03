@@ -1,7 +1,7 @@
-package com.example.finmid.controller
+package com.example.banka.controller
 
-import com.example.finmid.model.dto.account.AccountDto
-import com.example.finmid.service.AccountService
+import com.example.banka.model.dto.account.AccountDto
+import com.example.banka.service.AccountService
 import mu.KotlinLogging
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*

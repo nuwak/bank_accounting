@@ -1,1 +1,1 @@
-rootProject.name = "finmid"
+rootProject.name = "banka"
