@@ -7,6 +7,7 @@ import com.example.banka.model.entity.toDto
 import com.example.banka.model.repository.AccountRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
 class AccountService(
@@ -14,5 +15,6 @@ class AccountService(
 ) {
     fun create(dto: AccountDto) = accountRepository.save(Account.fromDto(dto)).toDto()
 
+    @Transactional(readOnly = true)
     fun getById(id: Long) = accountRepository.findByIdOrNull(id)?.toDto()
 }

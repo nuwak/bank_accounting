@@ -9,16 +9,20 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.Version
 
 
 @Entity
 class Account(
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    var accountId: Long? = null,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var accountId: Long = 0,
     var balance: BigDecimal,
 ) {
     companion object
+
+    @Version
+    var version: Long = 0
 
     @CreationTimestamp
     lateinit var created: Instant

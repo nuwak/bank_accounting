@@ -10,8 +10,8 @@ import javax.persistence.*
 @Entity
 class Transaction(
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    var txId: Long? = null,
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var txId: Long = 0,
     val amount: BigDecimal,
     @Column(name = "from_id")
     val from: Long,
@@ -20,6 +20,14 @@ class Transaction(
 ) {
     companion object
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "from_id", insertable = false, updatable = false)
+    lateinit var accountFrom: Account
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "from_id", insertable = false, updatable = false)
+    lateinit var accountTo: Account
+
     @CreationTimestamp
     lateinit var created: Instant
 
@@ -27,6 +35,7 @@ class Transaction(
     lateinit var updated: Instant
 }
 
+//todo: настроить сериалайзер
 fun Transaction.toDto() =
     TransactionDto(amount = amount.toString(), from = from, to = to)
 

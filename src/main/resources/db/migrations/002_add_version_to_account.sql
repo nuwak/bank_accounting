@@ -1,0 +1,1 @@
+alter table account add column version bigint not null default 0;

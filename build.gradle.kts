@@ -15,6 +15,7 @@ plugins {
 
 group = "com.example"
 java.sourceCompatibility = JavaVersion.VERSION_17
+val testcontainersVersion = "1.17.3"
 
 
 repositories {
@@ -37,6 +38,9 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
     implementation("ch.qos.logback:logback-classic:1.2.11")
 
+    testImplementation("org.testcontainers:testcontainers:$testcontainersVersion")
+    testImplementation("org.testcontainers:junit-jupiter:$testcontainersVersion")
+    testImplementation("org.testcontainers:postgresql:$testcontainersVersion")
 }
 
 tasks.withType<KotlinCompile> {

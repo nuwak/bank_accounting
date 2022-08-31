@@ -15,6 +15,7 @@ class AccountController(
     val log = KotlinLogging.logger {}
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody req: AccountDto): AccountDto =
         accountService.create(req)
 
