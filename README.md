@@ -7,6 +7,8 @@
 
 Run app `make run`
 
-## todo
- - [ ] write tests
+## Todo
+
+## Done
+- [x] write tests
 
