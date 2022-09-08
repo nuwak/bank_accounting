@@ -2,6 +2,7 @@ package com.example.banka.integration.service
 
 import com.example.banka.integration.IntegrationTestBase
 import com.example.banka.model.dto.transaction.TransactionDto
+import com.example.banka.model.entity.Account
 import com.example.banka.model.repository.AccountRepository
 import com.example.banka.service.TransactionService
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -17,6 +18,12 @@ internal class TransactionServiceTest : IntegrationTestBase() {
     @Autowired
     lateinit var accountRepository: AccountRepository
 
+    @Test
+    fun thredL()
+    {
+        val t = HashMap<String, String>()
+        t.put()
+    }
     @Test
     fun create() {
         val accountFrom = accountRepository.findByIdOrNull(1L) ?: error("No account")
